@@ -1,0 +1,436 @@
+/* ==================== RESET ==================== */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* ==================== BODY ==================== */
+body {
+   overflow-x: hidden;
+   background: linear-gradient(to right, rgb(66, 24, 24), rgb(58, 6, 6));
+   min-height: 100vh;
+}
+
+/* ==================== HEADER ==================== */
+header {
+   width: 100%;
+   background-color: rgb(126, 0, 0);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 50px;
+   gap: 8%;
+   font-size: 16px;
+   color: rgb(255, 255, 255);
+}
+
+header a {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   text-decoration: none;
+   color: inherit;
+   cursor: pointer;
+}
+
+header a:hover {
+   font-size: 20px;
+   color: rgb(228, 165, 165);
+   box-shadow: 0px 2px 3px 1px pink;
+}
+
+/* ==================== MAIN ==================== */
+main {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+/* ==================== CONTAINER-INFO ==================== */
+/*Colapse expand*/
+/* ==================== COLLAPSE/EXPAND ==================== */
+.container-info p {
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    max-height: 1000px; /* valor grande para quando estiver expandido */
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.text-butt{
+   display: none;
+}
+
+.container-info.collapsed p {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 10px 0;
+}
+
+.container-info {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   background: linear-gradient(135deg, rgb(223, 216, 216), rgb(187, 89, 89));
+   border-radius: 16px;
+   width: 95%;
+   padding: 40px 30px;
+   gap: 40px;
+   font-size: 22px;
+   line-height: 1.6;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   margin: 55px 0;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+   transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container-info:hover {
+   transform: scale(1.02);
+   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.img-container-info {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex: 1 1 300px;
+   max-width: 400px;
+   transition: transform 0.4s ease;
+}
+
+.img-container-info:hover {
+   transform: scale(1.05);
+}
+
+.logo-info {
+   display: none;
+   width: 100%;
+   height: auto;
+   object-fit: contain;
+   border-radius: 12px;
+   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+}
+
+.logo-info.activate {
+   display: block;
+}
+
+.container-info p {
+   flex: 2 1 400px;
+   color: #3a0000;
+   font-weight: 500;
+   text-align: justify;
+   word-break: break-word;
+   overflow-wrap: break-word;
+}
+
+.container-info button{
+   display: none;
+}
+
+/* ==================== CONTAINER-ROLL ==================== */
+.container-roll {
+   width: 100vw;
+   height: 500px;
+   display: flex;
+   overflow: hidden;
+   position: relative;
+}
+
+.item-top img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: contain;
+   display: block;
+   margin: 0 auto;
+}
+
+.item-top .title {
+   font-size: clamp(3rem, 12vw, 13rem);
+   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+   color: #ffff;
+   font-weight: bold;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 4;
+}
+
+.item-top .graos {
+   width: 100%;
+   position: absolute;
+   top: 50;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.item-top .coffee {
+   z-index: 2;
+   width: 70%;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.item-top {
+   display: none;
+   width: 100%;
+   height: 500px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   overflow: hidden;
+   background-color: var(--background);
+}
+
+.item-top.active {
+   display: block;
+}
+
+/* ==================== ANIMAÇÕES ==================== */
+@keyframes graosSlide {
+   0% {
+      left: -50%;
+      opacity: 0;
+      transform: rotate(-15deg) scale(0.8);
+   }
+   50% {
+      left: 5%;
+      opacity: 0.7;
+      transform: rotate(5deg) scale(1.05);
+   }
+   100% {
+      left: 0;
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+   }
+}
+
+@keyframes coffeeFloat {
+   0% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+   }
+   25% {
+      transform: translate(-50%, -52%) scale(1.02) rotate(-1deg);
+   }
+   50% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+   }
+   75% {
+      transform: translate(-50%, -48%) scale(0.98) rotate(1deg);
+   }
+   100% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+   }
+}
+
+@keyframes titleFadeIn {
+   0% {
+      opacity: 0;
+      transform: translate(-50%, -60%) scale(0.9);
+   }
+   70% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.05);
+   }
+   100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+   }
+}
+
+@keyframes scrollCatalog {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Aplicando as animações */
+.item-top.active img.graos {
+   animation: graosSlide 1.3s ease-out forwards;
+}
+
+.item-top.active img.coffee {
+   animation: coffeeFloat 3s ease-in-out infinite;
+}
+
+.item-top.active .title {
+   animation: titleFadeIn 2s ease-out forwards;
+}
+
+/*catalogo*/
+/* ================== CATÁLOGO ================== */
+
+/* ================== CATÁLOGO ================== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.catalog {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  background-color: rgb(58, 6, 6);
+  border: 1px dotted rgb(255, 255, 255);
+  padding: 20px;
+}
+
+.catalog::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.product {
+  background-color: rgb(66, 24, 24);
+  border-radius: 12px;
+  min-width: 220px;
+  flex: 0 0 auto;
+  padding: 15px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.img-ctl {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Setas de navegação */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(126, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: rgb(180, 0, 0);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .product {
+    min-width: 180px;
+
+  }
+  .arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 900px) {
+   .container-info {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px 20px;
+      gap: 25px;
+   }
+
+   .container-info p {
+      font-size: 18px;
+      padding: 0 10px;
+   }
+
+   .img-container-info {
+      max-width: 250px;
+   }
+
+}
+
+@media (max-width: 500px) {
+   .container-info {
+      width: 95%;
+      padding: 25px 15px;
+   }
+
+   .container-info p {
+      max-height: 0;
+      opacity: 0;
+      padding: 0;
+   }
+
+   .container-info.collapsed p {
+       max-height: 1000px;
+       opacity: 1;
+       padding: 10px 0;
+   }
+
+
+   .text-butt{
+      display: block;
+   }
+
+   .container-info button {
+      display: block;
+      background: rgb(126, 0, 0);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      align-self: flex-end;
+   }
+   
+   .container-info button:hover {
+      background: rgb(90, 0, 0);
+      transform: translateY(-3px);
+   }
+
+}
+
+@media (max-width: 348px) {
+   header {
+      font-size: 14px;
+      gap: 4px;
+   }
+
+   .item-top {
+      height: 400px;
+   }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Café fresco</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header>
+      <a href="#home">Home</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+      <a href="#sobre">Sobre nós</a>
+      <div class="line-header"></div>
+   </header>
+
+   <main>
+      <!-- ================== CONTAINER-ROLL ================== -->
+      <div class="container-roll">
+
+         <div class="item-top active" style="--background: rgb(139, 14, 14)">
+            <div class="title">Nescafé</div>
+            <img src="images/nescafe2-removebg-preview.png" alt="logo-nescafe" class="coffee">
+            <img src="images/graodecafe-removebg-preview.png" alt="logo-grao" class="graos">
+         </div>
+
+         <div class="item-top" style="--background: rgb(216, 55, 55)">
+            <div class="title">Nescafé</div>
+            <img src="images/cafe3-removebg-preview.png" alt="logo-nescafe" class="coffee">
+            <img src="images/grao3-removebg-preview.png" alt="logo-grao" class="graos">
+         </div>
+
+      </div><!-- /container-roll -->
+
+      <!-- ================== CONTAINER-INFO ================== -->
+      <div class="container-info">
+         <div class="img-container-info">
+            <img src="images/nescafe2-removebg-preview.png" alt="logo-info" class="logo-info activate">
+            <img src="images/cafe3-removebg-preview.png" alt="logo-info" class="logo-info">
+         </div>
+
+         <p>
+            Nescafé é uma marca de café instantâneo pertencente à Nestlé, lançada em 1938. 
+            O nome "Nescafé" é uma combinação das palavras "Nestlé" e "café". O café solúvel 
+            foi desenvolvido para conservar o sabor e aroma do café, tornando-o prático e fácil de preparar. 
+            Desde sua introdução, o Nescafé se tornou uma das marcas mais populares do mundo, sendo consumido 
+            em mais de 180 países. A marca é conhecida por sua versatilidade, oferecendo uma variedade de produtos, 
+            incluindo cafés solúveis, cappuccinos e expressos.<br><br>
+            A Nescafé com foco no melhor sabor para você.<br>
+            Café para a cultura.<br>
+            Café para a vida.<br>
+            Café para o brasileiro.<br>
+            Nescafé para o Brasil!
+         </p>
+
+         <!-- Botão visível apenas em telas pequenas -->
+          <div class="text-butt"><h3>Extender:</h3></div>
+         <button class="toggle-info" aria-label="Recolher texto">⮟</button>
+      </div><!-- /container-info -->
+
+<!-- ================== CATÁLOGO ================== -->
+
+<div class="carousel-container">
+  <button class="arrow left">&#10094;</button>
+
+  <div class="catalog" id="catalog">
+    <div class="product">
+      <img src="images/cafe3-removebg-preview.png" class="img-ctl">
+      <h3>café 300ml</h3>
+    </div>
+
+    <div class="product">
+      <img src="images/cafe3-removebg-preview.png" class="img-ctl">
+      <h3>café 500ml</h3>
+    </div>
+
+    <div class="product">
+      <img src="images/cafe3-removebg-preview.png" class="img-ctl">
+      <h3>café premium</h3>
+    </div>
+
+    <div class="product">
+      <img src="images/cafe3-removebg-preview.png" class="img-ctl">
+      <h3>café comum</h3>
+    </div>
+  </div>
+
+  <button class="arrow right">&#10095;</button>
+</div>
+
+
+   </main>
+
+   <footer></footer>
+
+   <script src="scripts.js"></script>
+</body>
+</html>
