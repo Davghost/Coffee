@@ -33,9 +33,22 @@ header a {
 }
 
 header a:hover {
-   font-size: 20px;
-   color: rgb(228, 165, 165);
-   box-shadow: 0px 2px 3px 1px pink;
+   transform: translatey(-2px);
+   color: rgb(255, 198, 198);
+
+}
+header a::after{
+   content: " ";
+   width: 0%;
+   height: 2px;
+   background-color: white;
+   position: absolute;
+   left: 0;
+  bottom: 0;
+  transition:  0.3s ease-in-out;
+}
+header a:hover::after{
+   width: 100%;
 }
 
 /* ==================== MAIN ==================== */
